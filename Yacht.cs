@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 public enum YachtCategory
 {
@@ -20,7 +21,47 @@ public static class YachtGame
 {
     public static int Score(int[] dice, YachtCategory category)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        switch (category)
+        {
+            case YachtCategory.Ones:
+                return GetNumbersScore(dice, 1);
+            //case YachtCategory.Twos:
+            //    break;
+            //case YachtCategory.Threes:
+            //    break;
+            //case YachtCategory.Fours:
+            //    break;
+            //case YachtCategory.Fives:
+            //    break;
+            //case YachtCategory.Sixes:
+            //    break;
+            //case YachtCategory.FullHouse:
+            //    break;
+            //case YachtCategory.FourOfAKind:
+            //    break;
+            //case YachtCategory.LittleStraight:
+            //    break;
+            //case YachtCategory.BigStraight:
+            //    break;
+            //case YachtCategory.Choice:
+            //    break;
+            case YachtCategory.Yacht:
+                return GetYachtScore(dice);
+            default:
+                throw new ArgumentException();
+        }
+    }
+
+    private static int GetNumbersScore(int[] dice, int diceNumber)
+    {
+        var orderedDice = dice.Count(x => x == diceNumber);
+        return orderedDice * diceNumber;
+    }
+
+    private static int GetYachtScore(int[] dice)
+    {
+        var orderedDice = dice.OrderBy(x => x).ToArray();
+        return orderedDice[0] == orderedDice[^1] ? 50 : 0;
     }
 }
 
