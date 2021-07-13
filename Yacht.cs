@@ -43,13 +43,18 @@ public static class YachtGame
                 return GetStraightScore(dice, 9);
             case YachtCategory.BigStraight:
                 return GetStraightScore(dice, 10);
-            //case YachtCategory.Choice:
-            //    break;
+            case YachtCategory.Choice:
+                return GetChoiceScore(dice);
             case YachtCategory.Yacht:
                 return GetYachtScore(dice);
             default:
                 throw new ArgumentException();
         }
+    }
+
+    private static int GetChoiceScore(int [] dice)
+    {
+        return dice.Sum(x => x);
     }
 
     private static int GetStraightScore(int[] dice, int category)

@@ -160,13 +160,13 @@ public class YachtTests
         Assert.Equal(0, YachtGame.Score(new[] { 6, 5, 4, 3, 1 }, YachtCategory.BigStraight));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Choice()
     {
         Assert.Equal(23, YachtGame.Score(new[] { 3, 3, 5, 6, 6 }, YachtCategory.Choice));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Yacht_as_choice()
     {
         Assert.Equal(10, YachtGame.Score(new[] { 2, 2, 2, 2, 2 }, YachtCategory.Choice));
