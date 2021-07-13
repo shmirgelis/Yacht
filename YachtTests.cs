@@ -112,49 +112,49 @@ public class YachtTests
         Assert.Equal(0, YachtGame.Score(new[] { 3, 3, 3, 5, 5 }, YachtCategory.FourOfAKind));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Little_straight()
     {
         Assert.Equal(30, YachtGame.Score(new[] { 3, 5, 4, 1, 2 }, YachtCategory.LittleStraight));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Little_straight_as_big_straight()
     {
         Assert.Equal(0, YachtGame.Score(new[] { 1, 2, 3, 4, 5 }, YachtCategory.BigStraight));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Four_in_order_but_not_a_little_straight()
     {
         Assert.Equal(0, YachtGame.Score(new[] { 1, 1, 2, 3, 4 }, YachtCategory.LittleStraight));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void No_pairs_but_not_a_little_straight()
     {
         Assert.Equal(0, YachtGame.Score(new[] { 1, 2, 3, 4, 6 }, YachtCategory.LittleStraight));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Minimum_is_1_maximum_is_5_but_not_a_little_straight()
     {
         Assert.Equal(0, YachtGame.Score(new[] { 1, 1, 3, 4, 5 }, YachtCategory.LittleStraight));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Big_straight()
     {
         Assert.Equal(30, YachtGame.Score(new[] { 4, 6, 2, 5, 3 }, YachtCategory.BigStraight));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Big_straight_as_little_straight()
     {
         Assert.Equal(0, YachtGame.Score(new[] { 6, 5, 4, 3, 2 }, YachtCategory.LittleStraight));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void No_pairs_but_not_a_big_straight()
     {
         Assert.Equal(0, YachtGame.Score(new[] { 6, 5, 4, 3, 1 }, YachtCategory.BigStraight));
