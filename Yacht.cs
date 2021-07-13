@@ -37,8 +37,8 @@ public static class YachtGame
                 return GetNumbersScore(dice, 6);
             case YachtCategory.FullHouse:
                 return GetFullHouseScore(dice);
-            //case YachtCategory.FourOfAKind:
-            //    break;
+            case YachtCategory.FourOfAKind:
+                return GetFourOfAKindScore(dice);
             //case YachtCategory.LittleStraight:
             //    break;
             //case YachtCategory.BigStraight:
@@ -52,19 +52,44 @@ public static class YachtGame
         }
     }
 
+    private static int GetFourOfAKindScore(int[] dice)
+    {
+        var groupedDice = dice.GroupBy(x => x);
+        foreach (var item in groupedDice)
+        {
+            if (item.Count() == 4)
+            {
+                {
+                    return item.Sum();
+                }
+
+            }
+            if (item.Count() == 5)
+            {
+                return item.Sum() - dice[0];
+            }
+            else
+            {
+                continue;
+            }
+        }
+
+        return 0;
+    }
+
     private static int GetFullHouseScore(int[] dice)
     {
         var groupedDice = dice.GroupBy(x => x).ToArray();
         if (groupedDice.Count() == 2)
         {
-            if(groupedDice[0].Count() == 2 || groupedDice[0].Count() == 3)
+            if (groupedDice[0].Count() == 2 || groupedDice[0].Count() == 3)
             {
                 return dice.Sum(x => x);
             }
             else
             {
                 return 0;
-            }                    
+            }
         }
         else
         {

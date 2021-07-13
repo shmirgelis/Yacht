@@ -94,19 +94,19 @@ public class YachtTests
         Assert.Equal(0, YachtGame.Score(new[] { 2, 2, 2, 2, 2 }, YachtCategory.FullHouse));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Four_of_a_kind()
     {
         Assert.Equal(24, YachtGame.Score(new[] { 6, 6, 4, 6, 6 }, YachtCategory.FourOfAKind));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Yacht_can_be_scored_as_four_of_a_kind()
     {
         Assert.Equal(12, YachtGame.Score(new[] { 3, 3, 3, 3, 3 }, YachtCategory.FourOfAKind));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Full_house_is_not_four_of_a_kind()
     {
         Assert.Equal(0, YachtGame.Score(new[] { 3, 3, 3, 5, 5 }, YachtCategory.FourOfAKind));
