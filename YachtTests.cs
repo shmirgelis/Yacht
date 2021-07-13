@@ -52,43 +52,43 @@ public class YachtTests
         Assert.Equal(15, YachtGame.Score(new[] { 3, 3, 3, 3, 3 }, YachtCategory.Threes));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Yacht_of_3s_counted_as_fives()
     {
         Assert.Equal(0, YachtGame.Score(new[] { 3, 3, 3, 3, 3 }, YachtCategory.Fives));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Sixes()
     {
         Assert.Equal(6, YachtGame.Score(new[] { 2, 3, 4, 5, 6 }, YachtCategory.Sixes));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Full_house_two_small_three_big()
     {
         Assert.Equal(16, YachtGame.Score(new[] { 2, 2, 4, 4, 4 }, YachtCategory.FullHouse));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Full_house_three_small_two_big()
     {
         Assert.Equal(19, YachtGame.Score(new[] { 5, 3, 3, 5, 3 }, YachtCategory.FullHouse));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Two_pair_is_not_a_full_house()
     {
         Assert.Equal(0, YachtGame.Score(new[] { 2, 2, 4, 4, 5 }, YachtCategory.FullHouse));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Four_of_a_kind_is_not_a_full_house()
     {
         Assert.Equal(0, YachtGame.Score(new[] { 1, 4, 4, 4, 4 }, YachtCategory.FullHouse));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Yacht_is_not_a_full_house()
     {
         Assert.Equal(0, YachtGame.Score(new[] { 2, 2, 2, 2, 2 }, YachtCategory.FullHouse));

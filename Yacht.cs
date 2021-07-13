@@ -25,18 +25,18 @@ public static class YachtGame
         {
             case YachtCategory.Ones:
                 return GetNumbersScore(dice, 1);
-            //case YachtCategory.Twos:
-            //    break;
-            //case YachtCategory.Threes:
-            //    break;
-            //case YachtCategory.Fours:
-            //    break;
-            //case YachtCategory.Fives:
-            //    break;
-            //case YachtCategory.Sixes:
-            //    break;
-            //case YachtCategory.FullHouse:
-            //    break;
+            case YachtCategory.Twos:
+                return GetNumbersScore(dice, 2);
+            case YachtCategory.Threes:
+                return GetNumbersScore(dice, 3);
+            case YachtCategory.Fours:
+                return GetNumbersScore(dice, 4);
+            case YachtCategory.Fives:
+                return GetNumbersScore(dice, 5);
+            case YachtCategory.Sixes:
+                return GetNumbersScore(dice, 6);
+            case YachtCategory.FullHouse:
+                return GetFullHouseScore(dice);
             //case YachtCategory.FourOfAKind:
             //    break;
             //case YachtCategory.LittleStraight:
@@ -52,6 +52,27 @@ public static class YachtGame
         }
     }
 
+    private static int GetFullHouseScore(int[] dice)
+    {
+        var groupedDice = dice.GroupBy(x => x).ToArray();
+        if (groupedDice.Count() == 2)
+        {
+            if(groupedDice[0].Count() == 2 || groupedDice[0].Count() == 3)
+            {
+                return dice.Sum(x => x);
+            }
+            else
+            {
+                return 0;
+            }                    
+        }
+        else
+        {
+            return 0;
+        }
+
+    }
+
     private static int GetNumbersScore(int[] dice, int diceNumber)
     {
         var orderedDice = dice.Count(x => x == diceNumber);
@@ -63,5 +84,7 @@ public static class YachtGame
         var orderedDice = dice.OrderBy(x => x).ToArray();
         return orderedDice[0] == orderedDice[^1] ? 50 : 0;
     }
+
+
 }
 
