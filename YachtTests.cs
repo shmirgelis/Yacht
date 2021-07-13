@@ -171,4 +171,10 @@ public class YachtTests
     {
         Assert.Equal(10, YachtGame.Score(new[] { 2, 2, 2, 2, 2 }, YachtCategory.Choice));
     }
+
+    [Fact]
+    public void Four_of_a_kind_perm1()
+    {
+        Assert.Equal(24, YachtGame.Score(new[] { 4, 6, 6, 6, 6 }, YachtCategory.FourOfAKind));
+    }
 }

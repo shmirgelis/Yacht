@@ -86,7 +86,7 @@ public static class YachtGame
             if (item.Count() >= 4)
             {
                 {
-                    return dice[0] * 4;
+                    return item.Key * 4;
                 }
             }
             else
